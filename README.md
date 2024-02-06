@@ -13,6 +13,14 @@ version 1.01 changes by Kayakbabe aka Kelly Eberhard Allen
 ## API
 Uses the open/free api https://data.rcc-acis.org/StnData   http://www.rcc-acis.org/docs_webservices.html
 
+By default this module will show the entire state
+
+other ways to define display area
+
+You may show an area defined by a bounding box of latitude and longtitude
+bbox	Bounding box. A latitude/longitude bounding box defined in decimal degrees (West, South, East, North) with negative values indicating west longitude and south latitude (e.g. -90.7, 40.5, -88.9, 41.5).
+
+
 ## Preview
 ![screenshot1](screenshot1.JPG)
 
@@ -20,6 +28,8 @@ Uses the open/free api https://data.rcc-acis.org/StnData   http://www.rcc-acis.o
 run git clone https://github.com/vincep5/MMM-RecentRainfall from inside your MagicMirror/modules folder
 
 Add `MMM-RecentRainfall` module to the `modules` array in the `config/config.js` file:
+
+To display your entire state, define state_id and also station_id (an international airport code near your are will work)
 ````javascript
 modules: [
   {
@@ -31,6 +41,26 @@ modules: [
         days_to_get: 7, // number greater than 1
         show_image: true, // show the departure from normal as an image
         state_id: 'ny', // if show_image is true, then this is required
+        image_width: 150 // if show_image is true, then this is required
+    }
+  },
+]
+
+You may show an area defined by a bounding box of latitude and longtitude
+bbox	Bounding box. A latitude/longitude bounding box defined in decimal degrees (West, South, East, North) with negative values indicating west longitude and south latitude (e.g. -90.7, 40.5, -88.9, 41.5).
+
+````javascript
+modules: [
+  {
+    module: "MMM-RecentRainfall",
+    position: "top_right",
+    header: "Rainfall",
+    config: {
+        station_id: 'JFK', // id via http://www.rcc-acis.org/docs_metadata.html
+        days_to_get: 7, // number greater than 1
+        show_image: true, // show the departure from normal as an image
+        state_id: 'ny', // if show_image is true, then this is required
+        bbox: '(-90.7, 40.5, -88.9, 41.5)', // (West, South, East, North) 
         image_width: 150 // if show_image is true, then this is required
     }
   },
