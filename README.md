@@ -1,5 +1,14 @@
 # MMM-RecentRainfall
-MagicMirror module to get recent US Rainfall amounts
+MagicMirror module to get recent US Rainfall amounts.
+version 1.01 changes by Kayakbabe aka Kelly Eberhard Allen
+  adding more options from the rcc-acis.org api in order to zoom in on smaller areas
+  such as county or that defined by gps coordinates as some states are very large
+  and some users may only want to see their own county or a defined area.
+
+  WARNING: THIS IS IN DEVELOPMENT_ THIS IS NOT RELEASED AS WORKING YET.
+           this message will be removed when this module is working.
+
+  requires ^MagicMirror 2.26
 
 ## API
 Uses the open/free api https://data.rcc-acis.org/StnData   http://www.rcc-acis.org/docs_webservices.html
