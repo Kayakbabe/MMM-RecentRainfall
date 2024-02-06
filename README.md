@@ -34,7 +34,7 @@ modules: [
   {
     module: "MMM-RecentRainfall",
     position: "top_right",
-    header: "Rainfall",
+    header: "Rainfall JFK INTL AP",
     config: {
         station_id: 'JFK', // id via http://www.rcc-acis.org/docs_metadata.html
         days_to_get: 7, // number greater than 1
